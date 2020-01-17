@@ -55,7 +55,12 @@ public class Exercises {
 		}
 		int max = numbers[0];
 		int mininum = numbers[0];
-
+		for(int i = 0; i < numbers.length; i++) {
+			max = (numbers[i] > max) ? numbers[i] : max;
+			mininum = (numbers[i] < mininum) ? numbers[i] : mininum;
+		}
+		return max - mininum;
+	}
 		return -1;		// default return value to ensure compilation
 	}
 
