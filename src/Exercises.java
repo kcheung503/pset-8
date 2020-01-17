@@ -13,13 +13,18 @@ public class Exercises {
 			return false;
 		}
 	}
-		// write your code here
-
 		return false;	// default return value to ensure compilation
 	}
 
 	public String[] endsMeet(String[] values, int n) {
-		// write your code here
+		String[] empty = new String[0];
+			if(values == null) {
+				return empty;
+			} else if(values.length < n) {
+				return empty;
+			} else if(n < 0) {
+				return empty;
+			}
 
 		return null;	// default return value to ensure compilation
 	}
