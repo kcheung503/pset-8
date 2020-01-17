@@ -74,7 +74,14 @@ public class Exercises {
 			 	} else if (numbers.length < 3 || numbers.length % 2 == 0) {
 				 	return 1/0;
 			 	}
-
+				double first = numbers[0];
+			 	double middle = numbers[(int) Math.floor(numbers.length / 2)];
+			 	double last = numbers[numbers.length - 1];
+			 	double max = (first > middle && first > last) ? first :
+			 	(middle > last) ? middle :
+			 	last;
+			 	return max;
+		 }
 		return -1;		// default return value to ensure compilation
 	}
 
