@@ -69,7 +69,11 @@ public class Exercises {
 	*/
 
 	public double biggest(double[] numbers) {
-
+		if(numbers == null) {
+				 	return 1/0;
+			 	} else if (numbers.length < 3 || numbers.length % 2 == 0) {
+				 	return 1/0;
+			 	}
 
 		return -1;		// default return value to ensure compilation
 	}
