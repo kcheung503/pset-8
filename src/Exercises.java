@@ -25,7 +25,13 @@ public class Exercises {
 			} else if(n < 0) {
 				return empty;
 			}
-
+			String[] a = new String[(2 * n)];
+			for(int i = 0; i < n; i ++) {
+				a[i] = values[i];
+				a[a.length - i] = values[values.length - i];
+				}
+				return a;
+	}
 		return null;	// default return value to ensure compilation
 	}
 
