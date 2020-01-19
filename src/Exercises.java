@@ -14,10 +14,8 @@ public class Exercises {
 		} else if(a[a.length - 1] == b[b.length - 1]) {
 			return true;
 		} else {
-			return false;
+			return false; // default return value to ensure compilation
 		}
-	}
-		return false;	// default return value to ensure compilation
 	}
 
 	/*
@@ -125,9 +123,16 @@ public class Exercises {
 		 		} else if (numbers.length < 1) {
 		 			return false;
 		 		}
-
-		return false;	// default return value to ensure compilation
-	}
+				for(int i = 0; i < numbers.length - 3; i++) {
+				 			double first = numbers[i];
+				 			double middle = numbers[i + 1];
+				 			double last = numbers[i + 2];
+				 			if(first > middle && middle > last) {
+				 				return true;
+				 			}
+				 		}
+					return false;	// default return value to ensure compilation
+				}
 
 	/*
 	** Exercise 7
