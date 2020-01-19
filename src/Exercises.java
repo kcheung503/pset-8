@@ -24,19 +24,19 @@ public class Exercises {
 
 	public String[] endsMeet(String[] values, int n) {
 		String[] empty = new String[0];
-			if(values == null) {
-				return empty;
-			} else if(values.length < n) {
-				return empty;
-			} else if(n < 0) {
-				return empty;
-			}
-			String[] a = new String[(2 * n)];
-			for(int i = 0; i < n; i ++) {
-				a[i] = values[i];
-				a[a.length - i] = values[values.length - i];
-				}
-				return a;
+		if(values == null) {
+			return empty;
+		} else if(values.length < n) {
+			return empty;
+		} else if(n < 0) {
+			return empty;
+		}
+		String[] a = new String[(2 * n)];
+		for(int i = 0; i < n; i ++) {
+			a[i] = values[i];
+			a[a.length - i - 1] = values[values.length - i - 1];
+		}
+		return a;
 	}
 
 	/*
@@ -45,17 +45,17 @@ public class Exercises {
 
 	public int difference(int[] numbers) {
 		if(numbers == null) {
-			return 1/0;
+			return -1;
 		} else if(numbers.length < 1) {
-			return 1/0;
+			return -1;
 		}
-		int max = numbers[0];
+		int maximum = numbers[0];
 		int mininum = numbers[0];
 		for(int i = 0; i < numbers.length; i++) {
-			max = (numbers[i] > max) ? numbers[i] : max;
+			maximum = (numbers[i] > maximum) ? numbers[i] : maximum;
 			mininum = (numbers[i] < mininum) ? numbers[i] : mininum;
 		}
-		return max - mininum;
+		return maximum - mininum;
 	}
 
 	/*
@@ -64,18 +64,18 @@ public class Exercises {
 
 	public double biggest(double[] numbers) {
 		if(numbers == null) {
-				 	return 1/0;
-			 	} else if (numbers.length < 3 || numbers.length % 2 == 0) {
-				 	return 1/0;
-			 	}
-				double first = numbers[0];
-			 	double middle = numbers[(int) Math.floor(numbers.length / 2)];
-			 	double last = numbers[numbers.length - 1];
-			 	double max = (first > middle && first > last) ? first :
-			 	(middle > last) ? middle :
-			 	last;
-			 	return max;
-		 }
+			return -1;
+		} else if (numbers.length < 3 || numbers.length % 2 == 0) {
+			return -1;
+		}
+		double first = numbers[0];
+		double middle = numbers[(int) Math.floor(numbers.length / 2)];
+		double last = numbers[numbers.length - 1];
+		double maximum = (first > middle && first > last) ? first :
+		(middle > last) ? middle :
+		last;
+		return maximum;
+	}
 
 	/*
 	** Exercise 5
@@ -83,27 +83,28 @@ public class Exercises {
 
 	public String[] middle(String[] words) {
 		String[] empty = new String[0];
-	 		for(int i = 0; i < words.length; i ++) {
-		 		boolean containsNull = false;
-		 		containsNull = (words[i] == null) ? true : false;
-		 		if(containsNull) {
-			 		return empty;
-		 		}
-	 		}
-	 		if(words == null) {
-		 		return empty;
-	 		} else if (words.length < 3 || words.length % 2 == 0) {
-		 		return empty;
-	 }
-	 	String first = words[(int) Math.floor(words.length / 2) - 1];
-	 	String middle = words[(int) Math.floor(words.length / 2)];
-	 	String last = words[(int) Math.floor(words.length / 2) + 1];
-	 	String[] returnArray = new String[3];
-	 	returnArray[0] = first;
-	 	returnArray[0] = middle;
-	 	returnArray[0] = last;
-	 	return returnArray;
- 	}
+		if(words == null) {
+			return empty;
+		}
+		for(int i = 0; i < words.length; i ++) {
+			boolean containsNull = false;
+			containsNull = (words[i] == null) ? true : false;
+			if(containsNull) {
+				return empty;
+			}
+		}
+		if (words.length < 3 || words.length % 2 == 0) {
+			return empty;
+		}
+		String first = words[((int) Math.floor(words.length / 2)) - 1];
+		String middle = words[(int) Math.floor(words.length / 2)];
+		String last = words[(int) Math.floor(words.length / 2) + 1];
+		String[] returnArray = new String[3];
+		returnArray[0] = first;
+		returnArray[1] = middle;
+		returnArray[2] = last;
+		return returnArray;
+	}
 
 	/*
 	** Exercise 6
