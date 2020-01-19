@@ -189,7 +189,19 @@ public class Exercises {
 					} else if (numbers.length < 2) {
 						return false;
 					}
-
+					for(int i = 0; i < numbers.length; i ++) {
+						int sumLeft = 0;
+						int sumRight = 0;
+						for(int j = 0; j < i; i ++) {
+							sumLeft += numbers[j];
+						}
+						for(int j = i; j < numbers.length; j ++) {
+							sumRight += numbers[j];
+						}
+						if(sumLeft == sumRight) {
+							return true;
+						}
+					}
 		return false;	// default return value to ensure compilation
 	}
 
