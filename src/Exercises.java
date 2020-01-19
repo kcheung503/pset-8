@@ -38,9 +38,7 @@ public class Exercises {
 				}
 				return a;
 	}
-		return null;	// default return value to ensure compilation
-	}
-
+	
 	/*
 	** Exercise 3
 	*/
@@ -58,8 +56,6 @@ public class Exercises {
 			mininum = (numbers[i] < mininum) ? numbers[i] : mininum;
 		}
 		return max - mininum;
-	}
-		return -1;		// default return value to ensure compilation
 	}
 
 	/*
@@ -80,38 +76,32 @@ public class Exercises {
 			 	last;
 			 	return max;
 		 }
-		return -1;		// default return value to ensure compilation
-	}
 
 	/*
 	** Exercise 5
 	*/
 
-	public String[] middle(String[] values) {
-		String[] empty = new String[0];
-			 		for(int i = 0; i < words.length; i ++) {
-				 		boolean containsNull = false;
-				 		containsNull = (words[i] == null) ? true : false;
-				 		if(containsNull) {
-					 		return empty;
-				 		}
-			 		}
-			 		if(words == null) {
-				 		return empty;
-			 		} else if (words.length < 3 || words.length % 2 == 0) {
-				 		return empty;
-			 }
-			 String first = words[(int) Math.floor(words.length / 2) - 1];
-		 	 String middle = words[(int) Math.floor(words.length / 2)];
-		 	 String last = words[(int) Math.floor(words.length / 2) + 1];
-		   String[] returnArray = new String[3];
-		 	 returnArray[0] = first;
-		 	 returnArray[0] = middle;
-		 	 returnArray[0] = last;
-		 	 return returnArray;
-	 	}
-		return null;	// default return value to ensure compilation
-	}
+	public String[] middle(String[] words) {
+	 	String[] empty = new String[0];
+	 		for(int i = 0; i < words.length; i ++) {
+		 		boolean containsNull = false;
+		 		containsNull = (words[i] == null) ? true : false;
+		 		if(containsNull) {
+			 		return empty;
+		 		}
+	 		}
+	 		if (words.length < 3 || words.length % 2 == 0) {
+		 		return empty;
+	 }
+	 	String first = words[(int) Math.floor(words.length / 2) - 1];
+	 	String middle = words[(int) Math.floor(words.length / 2)];
+	 	String last = words[(int) Math.floor(words.length / 2) + 1];
+	 	String[] returnArray = new String[3];
+	 	returnArray[0] = first;
+	 	returnArray[0] = middle;
+	 	returnArray[0] = last;
+	 	return returnArray;
+ 	}
 
 	/*
 	** Exercise 6
@@ -138,25 +128,23 @@ public class Exercises {
 	** Exercise 7
 	*/
 
-	public boolean everywhere(int[] numbers, int x) {
-		if(values == null) {
-		 			return false;
-		 		} else if (values.length < 1) {
-		 			return false;
-		 		}
-				for(int i = 1; i < values.length - 1; i ++) {
-		 			if(values[i] != x) {
-		 				if(values [i - 1] != x) {
-		 					return false;
-		 				} else if(values [i + 1] != x) {
-		 					return false;
-		 				}
-		 			}
-		 		}
+	public boolean everywhere(int values[], int x) {
+ 		if(values == null) {
+ 			return false;
+ 		} else if (values.length < 1) {
+ 			return false;
+ 		}
+ 		for(int i = 1; i < values.length - 1; i ++) {
+ 			if(values[i] != x) {
+ 				if(values [i - 1] != x) {
+ 					return false;
+ 				} else if(values [i + 1] != x) {
+ 					return false;
+ 				}
+ 			}
+ 		}
  		return true;
  	}
-		return false;	// default return value to ensure compilation
-	}
 
 	/*
 	** Exercise 8
@@ -230,6 +218,4 @@ public class Exercises {
 								}
 								return clumpNum;
 							}
-		return -1;		// default return value to ensure compilation
-	}
 }
