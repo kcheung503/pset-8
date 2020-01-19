@@ -38,7 +38,7 @@ public class Exercises {
 				}
 				return a;
 	}
-	
+
 	/*
 	** Exercise 3
 	*/
@@ -82,7 +82,7 @@ public class Exercises {
 	*/
 
 	public String[] middle(String[] words) {
-	 	String[] empty = new String[0];
+		String[] empty = new String[0];
 	 		for(int i = 0; i < words.length; i ++) {
 		 		boolean containsNull = false;
 		 		containsNull = (words[i] == null) ? true : false;
@@ -90,7 +90,9 @@ public class Exercises {
 			 		return empty;
 		 		}
 	 		}
-	 		if (words.length < 3 || words.length % 2 == 0) {
+	 		if(words == null) {
+		 		return empty;
+	 		} else if (words.length < 3 || words.length % 2 == 0) {
 		 		return empty;
 	 }
 	 	String first = words[(int) Math.floor(words.length / 2) - 1];
@@ -152,20 +154,20 @@ public class Exercises {
 
 	public boolean consecutive(int[] numbers) {
 		if(numbers == null) {
-						return false;
-					} else if (numbers.length < 3) {
-						return false;
-					}
-					for(int i = 0; i < numbers.length - 3; i ++) {
-									if(numbers[i] % 2 == 0 && numbers[i + 1] % 2 == 0 && numbers[i + 2] % 2 == 0) {
-										return true;
-									}
-									if(numbers[i] % 2 == 1 && numbers[i + 1] % 2 == 1 && numbers[i + 2] % 2 == 1) {
-										return true;
-									}
-								}
-		return false;	// default return value to ensure compilation
-	}
+				return false;
+			} else if (numbers.length < 3) {
+				return false;
+			}
+			for(int i = 0; i < numbers.length - 3; i ++) {
+				if(numbers[i] % 2 == 0 && numbers[i + 1] % 2 == 0 && numbers[i + 2] % 2 == 0) {
+					return true;
+				}
+				if(numbers[i] % 2 == 1 && numbers[i + 1] % 2 == 1 && numbers[i + 2] % 2 == 1) {
+					return true;
+				}
+			}
+			return false;
+		}
 
 	/*
 	** Exercise 9
@@ -199,23 +201,25 @@ public class Exercises {
 
 	public int clumps(String[] values) {
 		if(values == null) {
-						return -1;
-					} else if(values.length < 2) {
-						return -1;
-					}
-					int clumpNum = 0;
-					for(int i = 0; i < values.length; i ++) {
-									boolean containsNull = false;
-									containsNull = (values[i] == null) ? true : false;
-									if(containsNull) {
-										return -1;
-									}
-								}
-								for(int i = 0; i < values.length - 1; i ++) {
-									if(values[i].equals(values[i + 1])) {
-										clumpNum ++;
-									}
-								}
-								return clumpNum;
-							}
+			return -1;
+		}
+		int clumpNum = 0;
+		for(int i = 0; i < values.length; i ++) {
+			boolean containsNull = false;
+			containsNull = (values[i] == null) ? true : false;
+			if(containsNull) {
+				return -1;
+			}
+		}
+		for(int i = 0; i < values.length - 1; i ++) {
+			if(i == 0) {
+				if(values[i].equals(values[i + 1])) {
+					clumpNum ++;
+				}
+			} else if(values[i].equals(values[i + 1]) && !(values[i].equals(values[i - 1]))) {
+				clumpNum ++;
+			}
+		}
+		return clumpNum;
+	}
 }
