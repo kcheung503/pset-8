@@ -103,7 +103,15 @@ public class Exercises {
 			 		} else if (words.length < 3 || words.length % 2 == 0) {
 				 		return empty;
 			 }
-
+			 String first = words[(int) Math.floor(words.length / 2) - 1];
+		 	 String middle = words[(int) Math.floor(words.length / 2)];
+		 	 String last = words[(int) Math.floor(words.length / 2) + 1];
+		   String[] returnArray = new String[3];
+		 	 returnArray[0] = first;
+		 	 returnArray[0] = middle;
+		 	 returnArray[0] = last;
+		 	 return returnArray;
+	 	}
 		return null;	// default return value to ensure compilation
 	}
 
