@@ -90,7 +90,19 @@ public class Exercises {
 	*/
 
 	public String[] middle(String[] values) {
-
+		String[] empty = new String[0];
+			 		for(int i = 0; i < words.length; i ++) {
+				 		boolean containsNull = false;
+				 		containsNull = (words[i] == null) ? true : false;
+				 		if(containsNull) {
+					 		return empty;
+				 		}
+			 		}
+			 		if(words == null) {
+				 		return empty;
+			 		} else if (words.length < 3 || words.length % 2 == 0) {
+				 		return empty;
+			 }
 
 		return null;	// default return value to ensure compilation
 	}
