@@ -163,7 +163,11 @@ public class Exercises {
 	*/
 
 	public boolean consecutive(int[] numbers) {
-
+		if(numbers == null) {
+						return false;
+					} else if (numbers.length < 3) {
+						return false;
+					}
 
 		return false;	// default return value to ensure compilation
 	}
