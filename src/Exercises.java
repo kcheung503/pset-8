@@ -216,7 +216,20 @@ public class Exercises {
 						return -1;
 					}
 					int clumpNum = 0;
-
+					for(int i = 0; i < values.length; i ++) {
+									boolean containsNull = false;
+									containsNull = (values[i] == null) ? true : false;
+									if(containsNull) {
+										return -1;
+									}
+								}
+								for(int i = 0; i < values.length - 1; i ++) {
+									if(values[i].equals(values[i + 1])) {
+										clumpNum ++;
+									}
+								}
+								return clumpNum;
+							}
 		return -1;		// default return value to ensure compilation
 	}
 }
