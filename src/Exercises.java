@@ -120,7 +120,11 @@ public class Exercises {
 	*/
 
 	public boolean increasing(int[] numbers) {
-
+		if(numbers == null) {
+		 			return false;
+		 		} else if (numbers.length < 1) {
+		 			return false;
+		 		}
 
 		return false;	// default return value to ensure compilation
 	}
