@@ -112,42 +112,40 @@ public class Exercises {
 
 	public boolean increasing(int[] numbers) {
 		if(numbers == null) {
-		 			return false;
-		 		} else if (numbers.length < 1) {
-		 			return false;
-		 		}
-				for(int i = 0; i < numbers.length - 3; i++) {
-				 			double first = numbers[i];
-				 			double middle = numbers[i + 1];
-				 			double last = numbers[i + 2];
-				 			if(first > middle && middle > last) {
-				 				return true;
-				 			}
-				 		}
-					return false;	// default return value to ensure compilation
-				}
+			return false;
+		} else if (numbers.length < 1) {
+			return false;
+		}
+		for(int i = 0; i < numbers.length - 2; i++) {
+			double first = numbers[i];
+			double middle = numbers[i + 1];
+			double last = numbers[i + 2];
+			if(first > middle && middle > last) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	/*
 	** Exercise 7
 	*/
 
 	public boolean everywhere(int values[], int x) {
- 		if(values == null) {
- 			return false;
- 		} else if (values.length < 1) {
- 			return false;
- 		}
- 		for(int i = 1; i < values.length - 1; i ++) {
- 			if(values[i] != x) {
- 				if(values [i - 1] != x) {
- 					return false;
- 				} else if(values [i + 1] != x) {
- 					return false;
- 				}
- 			}
- 		}
- 		return true;
- 	}
+		if(values == null) {
+			return false;
+		} else if (values.length < 1) {
+			return false;
+		}
+		for(int i = 1; i < values.length - 1; i ++) {
+			if(values[i] != x) {
+				if(values [i - 1] != x && values [i + 1] != x) {
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 
 	/*
 	** Exercise 8
@@ -155,20 +153,20 @@ public class Exercises {
 
 	public boolean consecutive(int[] numbers) {
 		if(numbers == null) {
-				return false;
-			} else if (numbers.length < 3) {
-				return false;
-			}
-			for(int i = 0; i < numbers.length - 3; i ++) {
-				if(numbers[i] % 2 == 0 && numbers[i + 1] % 2 == 0 && numbers[i + 2] % 2 == 0) {
-					return true;
-				}
-				if(numbers[i] % 2 == 1 && numbers[i + 1] % 2 == 1 && numbers[i + 2] % 2 == 1) {
-					return true;
-				}
-			}
+			return false;
+		} else if (numbers.length < 3) {
 			return false;
 		}
+		for(int i = 0; i < numbers.length - 2; i ++) {
+			if(numbers[i] % 2 == 0 && numbers[i + 1] % 2 == 0 && numbers[i + 2] % 2 == 0) {
+				return true;
+			}
+			if(numbers[i] % 2 == 1 && numbers[i + 1] % 2 == 1 && numbers[i + 2] % 2 == 1) {
+				return true;
+			}
+		}
+		return false;
+	}
 
 	/*
 	** Exercise 9
