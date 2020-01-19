@@ -210,7 +210,12 @@ public class Exercises {
 	*/
 
 	public int clumps(String[] values) {
-
+		if(values == null) {
+						return -1;
+					} else if(values.length < 2) {
+						return -1;
+					}
+					int clumpNum = 0;
 
 		return -1;		// default return value to ensure compilation
 	}
