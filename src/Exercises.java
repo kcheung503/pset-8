@@ -144,7 +144,17 @@ public class Exercises {
 		 		} else if (values.length < 1) {
 		 			return false;
 		 		}
-
+				for(int i = 1; i < values.length - 1; i ++) {
+		 			if(values[i] != x) {
+		 				if(values [i - 1] != x) {
+		 					return false;
+		 				} else if(values [i + 1] != x) {
+		 					return false;
+		 				}
+		 			}
+		 		}
+ 		return true;
+ 	}
 		return false;	// default return value to ensure compilation
 	}
 
