@@ -184,7 +184,11 @@ public class Exercises {
 	*/
 
 	public boolean balance(int[] numbers) {
-
+		if(numbers == null) {
+						return false;
+					} else if (numbers.length < 2) {
+						return false;
+					}
 
 		return false;	// default return value to ensure compilation
 	}
