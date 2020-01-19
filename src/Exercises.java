@@ -139,7 +139,11 @@ public class Exercises {
 	*/
 
 	public boolean everywhere(int[] numbers, int x) {
-
+		if(values == null) {
+		 			return false;
+		 		} else if (values.length < 1) {
+		 			return false;
+		 		}
 
 		return false;	// default return value to ensure compilation
 	}
